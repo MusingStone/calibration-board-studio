@@ -1,0 +1,65 @@
+name: Bug report · 问题反馈
+description: Something is wrong with a target, an export, or the interface · 标定板、导出或界面出现问题
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do not paste private data; a project JSON
+        with the problem (if it is small) helps a lot.
+        感谢反馈。请勿粘贴隐私数据；如果工程不大，附上出问题的工程 JSON 会很有帮助。
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened · 实际现象
+      description: Include the target type and the steps that lead to the problem.
+      placeholder: |
+        1. Added a ChArUco board ...
+        2. Typed a dimension value ...
+        3. Exported PDF ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected · 预期结果
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target and parameters · 标定板与参数
+      description: Target type, rows/columns, square and marker size, dictionary, paper.
+      placeholder: charuco · 7x10 · square 30 mm · marker 22 mm · DICT_5X5_1000 · A4 landscape
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and version · 浏览器与版本
+      placeholder: Chrome 131 / Safari 18 / Firefox 133, OS
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area · 相关区域
+      multiple: true
+      options:
+        - Canvas or snapping · 画布或吸附
+        - Dimensions · 尺寸线
+        - Layer tree · 图层树
+        - Layout panel · 排版面板
+        - Export (PDF/SVG/PNG/JSON) · 导出
+        - Import or project file · 导入或工程文件
+        - Interface language · 界面语言
+        - Print scale · 打印比例
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Extra material · 补充材料
+      description: Console errors, screenshots, or the smallest project JSON that reproduces it.
+    validations:
+      required: false

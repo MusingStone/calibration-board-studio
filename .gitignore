@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+
+# Local environment and editor state
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+*.local
+
+# Logs and coverage
+npm-debug.log*
+yarn-error.log*
+coverage/

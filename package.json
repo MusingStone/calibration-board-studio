@@ -1,0 +1,36 @@
+{
+  "name": "calibration-board-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser-based studio for camera calibration targets (chessboard, ChArUco, ArUco, AprilTag, circle grids) in true millimeter scale, with sketch-style snapping, dimensions and print-accurate PDF/SVG/PNG export. 纯浏览器运行的标定板工坊：以毫米为单位设计并导出标定板，支持草图式吸附与尺寸线标注。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MusingStone/calibration-board-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MusingStone/calibration-board-studio/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && node scripts/generate_site_metadata.mjs",
+    "preview": "vite preview",
+    "notices": "node scripts/generate_notices.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.5"
+  }
+}
