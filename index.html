@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="theme-color" content="#f5f6f8"/>
+    <title>标定板工坊 — 相机标定板生成器</title>
+    <meta name="description" content="Browser-based studio for camera calibration targets — chessboard, ChArUco, ArUco, AprilTag and circle grids in true millimeter scale, with print-accurate PDF/SVG/PNG export. 纯浏览器运行的标定板工坊：毫米级几何，可原尺寸打印导出，无需后端。"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="标定板工坊 — Calibration Board Studio"/>
+    <meta property="og:description" content="Design chessboard, ChArUco, ArUco, AprilTag and circle-grid calibration targets in true millimeter scale, then export print-accurate PDF, SVG or PNG. 以毫米为单位设计标定板并导出可原尺寸打印的 PDF、SVG 或 PNG，全部在浏览器本地完成。"/>
+    <style>
+      body{margin:0}
+      #root>.crawl-content{display:none}
+      #root>.boot-screen{min-height:100vh;min-height:100dvh;display:grid;place-items:center;background:#f6f7f9}
+      .boot-screen span{width:2.25rem;height:2.25rem;border:.2rem solid #f3d8d1;border-top-color:#e9654b;border-radius:50%;animation:boot-spin .8s linear infinite}
+      @keyframes boot-spin{to{transform:rotate(360deg)}}
+      @media(prefers-reduced-motion:reduce){.boot-screen span{animation:none}}
+    </style>
+    <noscript><style>
+      #root>.boot-screen{display:none}
+      #root>.crawl-content{display:block;max-width:48rem;margin:3rem auto;padding:0 1.5rem;font:1rem/1.65 Arial,"Noto Sans SC",sans-serif;color:#25303b}
+      #root>.crawl-content h1{font-size:1.75rem;line-height:1.3}
+      #root>.crawl-content h2{font-size:1.25rem}
+    </style></noscript>
+  </head>
+  <body>
+    <div id="root">
+      <main class="crawl-content">
+        <h1>标定板工坊：相机标定板生成器</h1>
+        <p>在浏览器中设计和生成相机标定板。支持棋盘格、对称与非对称圆点阵列、ArUco、ChArUco、AprilTag、AprilGrid / Kalibr 及自定义二值图案。</p>
+        <p>以毫米设置纸张和图案尺寸，使用图层、坐标轴、吸附与尺寸标注进行排版，并导出可按实际尺寸打印的 PDF、SVG 或指定 DPI 的 PNG。图案生成与导出在浏览器本地完成。</p>
+        <section lang="en">
+          <h2>Calibration Board Studio</h2>
+          <p>Create camera calibration targets in your browser: chessboards, symmetric and asymmetric circle grids, ArUco, ChArUco, AprilTag, AprilGrid / Kalibr, and custom binary patterns. Set physical dimensions in millimeters, arrange layers and drawing dimensions, then export PDF, SVG, or PNG for printing. Generation runs locally in the browser.</p>
+        </section>
+        <noscript><p>请启用 JavaScript 使用标定板编辑器。Enable JavaScript to use the calibration board editor.</p></noscript>
+      </main>
+      <div class="boot-screen" role="status" aria-label="正在加载标定板编辑器"><span aria-hidden="true"></span></div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
